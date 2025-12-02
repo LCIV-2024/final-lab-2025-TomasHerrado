@@ -34,6 +34,8 @@ public class PlayerService {
         if (playerDTO.getFecha() == null) {
             playerDTO.setFecha(LocalDate.now());
         }
+        playerDTO.setId(null);
+
         Player player = toEntity(playerDTO);
         Player saved = playerRepository.save(player);
         return toDTO(saved);
